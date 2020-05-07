@@ -10,7 +10,7 @@ class LoginPage(BasePage):
     def should_be_login_url(self):
         # реализуйте проверку на корректный url адрес
         cur_url = self.browser.current_url
-        is_login_url = is_login_url.replace("/", " ").strip()
+        is_login_url = cur_url.replace("/", " ").strip()
         assert is_login_url.split()[-1] == "login", f"It's not a login page, "\
             "correct url is {cur_url}"
 
